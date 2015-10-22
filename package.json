@@ -1,0 +1,24 @@
+{
+  "name": "loadtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thattommyhall",
+  "license": "MIT",
+  "dependencies": {
+    "airbrake": "^0.3.8",
+    "body-parser": "^1.14.1",
+    "bugsnag": "^1.6.6",
+    "dynamoose": "^0.4.1",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "node-uuid": "^1.4.3",
+    "raygun": "^0.7.1",
+    "redis": "^2.1.0",
+    "request": "^2.64.0",
+    "ws": "^0.8.0"
+  }
+}
