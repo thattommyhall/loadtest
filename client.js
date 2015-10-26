@@ -10,6 +10,7 @@ var N = process.env.N || 2;
 
 var connections = {};
 var userCount = 0;
+var errors = 0;
 
 function connect() {
   var ws = new WebSocket('ws://' + SERVER + ':' + PORT);
@@ -39,10 +40,10 @@ function start_connection() {
   var ws = connect();
   var handler = function(ws) {
     ws.on('error', function(err) {
-      console.log(err);
       ws.close();
       delete connections[ws.userName];
       userCount--;
+      errors++;
     });
   };
   handler(ws);
@@ -63,6 +64,8 @@ for (var i=0; i<N; i++) {
 function displayStats() {
   console.log('************');
   console.log(userCount);
+  console.log(errors);
+  console.log(userCount+errors);
 }
 
 setInterval(displayStats, 1000);
